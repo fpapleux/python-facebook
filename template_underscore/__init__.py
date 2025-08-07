@@ -1,0 +1,1 @@
+from .strapi import StrapiCollection

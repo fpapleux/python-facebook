@@ -1,0 +1,21 @@
+[project]
+name = "template"
+version = "0.1.0"
+description = "A Python librayr for x"
+authors = [
+    { name = "Fabien Papleux", email = "fabien@papleux.com" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "requests",
+    "openai",
+    "python-dotenv"
+]
+
+[tool.setuptools]
+packages = ["template_underscore"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
