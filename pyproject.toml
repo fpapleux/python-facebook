@@ -1,20 +1,18 @@
 [project]
-name = "template"
+name = "facebook"
 version = "0.1.0"
-description = "A Python librayr for x"
+description = "A Python librayr for Facebook"
 authors = [
     { name = "Fabien Papleux", email = "fabien@papleux.com" }
 ]
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
-    "requests",
-    "openai",
-    "python-dotenv"
+    "requests"
 ]
 
 [tool.setuptools]
-packages = ["template_underscore"]
+packages = ["facebook"]
 
 [build-system]
 requires = ["setuptools", "wheel"]

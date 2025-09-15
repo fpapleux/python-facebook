@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+facebook/__init__.py
+facebook/facebook.py
+facebook/setup.py
+facebook.egg-info/PKG-INFO
+facebook.egg-info/SOURCES.txt
+facebook.egg-info/dependency_links.txt
+facebook.egg-info/requires.txt
+facebook.egg-info/top_level.txt
