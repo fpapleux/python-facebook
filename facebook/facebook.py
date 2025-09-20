@@ -143,7 +143,7 @@ class Facebook:
     #########################################################################################################################
     def getPost (self, post_id : str):
         if self.connected:
-            url = f"{self.FB_URL}/{post_id}"
+            url = f"{self.URL}/{post_id}"
             fields = "id,permalink_url,created_time,updated_time,message,message_tags,status_type,from,is_published,is_hidden,privacy,shares"
             params = {
                 'access_token': self.PAGE_TOKEN,
