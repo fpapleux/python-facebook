@@ -158,6 +158,41 @@ class Facebook:
                 return None
         return None
 
+    #########################################################################################################################
+    # Posts a comment on a given post (as the Page).
+    # Returns the id of the comment just published or None if failure
+    #########################################################################################################################
+    def postComment(self, post_id: str, content: str):
+        if not self.connected:
+            print("Not connected to Facebook")
+            return None
+
+        if not post_id or not isinstance(post_id, str):
+            raise ValueError("post_id must be a non-empty string")
+
+        if content is None or not isinstance(content, str) or not content.strip():
+            raise ValueError("content must be a non-empty string")
+
+        url = f"{self.URL}/{post_id}/comments"
+        data = {
+            "access_token": self.PAGE_TOKEN,   # comment as the Page
+            "message": content
+        }
+
+        try:
+            response = requests.post(url, data=data, timeout=30)
+        except requests.RequestException as e:
+            print(f"Error: request failed - {e}")
+            return None
+
+        if response.status_code // 100 == 2:
+            # Successful responses typically include {"id": "<comment_id>"}
+            comment_id = response.json().get("id")
+            print("Comment was successful...")
+            return comment_id
+        else:
+            print(f"Error: {response.status_code} - {response.text}")
+            return None
 
 
 
